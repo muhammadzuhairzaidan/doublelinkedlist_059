@@ -33,7 +33,7 @@ DoubleLinkedList::DoubleLinkedList() {
 void DoubleLinkedList::addNode() {
 	int nim;
 	string nm;
-	cout << "\mEnter the roll nummber of the student: ";
+	cout << "\nEnter the roll nummber of the student: ";
 	cin >> nim;
 	cout << " \nEnter name of the student: ";
 	cin >> nm;
