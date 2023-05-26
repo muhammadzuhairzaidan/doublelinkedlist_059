@@ -22,7 +22,12 @@ public:
 	void traverse();
 	void hapus();
 	void searchData();
+
 };
+
+DoubleLinkedList::DoubleLinkedList() {
+	START = NULL;
+}
 
 void DoubleLinkedList::addNode() {
 	int nim;
@@ -48,5 +53,18 @@ void DoubleLinkedList::addNode() {
 		newNode->prev = NULL; //Step 5
 		START = newNode; //Step 6
 		return;
-	
-}
+	}
+
+	/*Inserting a Node Between two Nodes in the List*/
+	Node* current = START; //1.a
+	Node* previous = NULL; //1.b
+	while (current->next != NULL && current->next->noMhs < nim) //Step 1.c
+	{
+		previous = current; //1.d
+		current = current->next; //1.e
+	}
+
+	if (current->next != NULL && nim == current->next->noMhs) {
+		cout << "\nDuplicate roll numbers not allowed" << endl;
+		return;
+	}
