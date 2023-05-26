@@ -8,13 +8,13 @@ public:
 	string  name;
 	Node* next;
 	Node* prev;
-
 };
 
 class DoubleLinkedList {
 private:
-	Node* START = NULL;
+	Node* START;
 public:
+	DoubleLinkedList();
 	void addNode();
 	bool search(int rollNo, Node** previous, Node** current);
 	bool deleteNode(int rollNo);
@@ -23,7 +23,6 @@ public:
 	void revtraverse();
 	void hapus();
 	void searchData();
-
 };
 
 DoubleLinkedList::DoubleLinkedList() {
@@ -33,7 +32,7 @@ DoubleLinkedList::DoubleLinkedList() {
 void DoubleLinkedList::addNode() {
 	int nim;
 	string nm;
-	cout << "\mEnter the roll nummber of the student: ";
+	cout << "\nEnter the roll nummber of the student: ";
 	cin >> nim;
 	cout << " \nEnter name of the student: ";
 	cin >> nm;
