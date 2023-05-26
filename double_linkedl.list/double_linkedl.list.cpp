@@ -20,6 +20,7 @@ public:
 	bool deleteNode(int rollNo);
 	bool listEmpty();
 	void traverse();
+	void revtraverse();
 	void hapus();
 	void searchData();
 
@@ -115,6 +116,27 @@ void DoubleLinkedList::traverse() {
 		while (currentNode != NULL) {
 			cout << currentNode->noMhs << " " << currentNode->name << endl;
 			currentNode = currentNode->next;
+ 		}
+	}
+}
+
+void DoubleLinkedList::revtraverse() {
+	if (listEmpty()) {
+		cout << "\nList is Empty" << endl;
+	}
+
+	else {
+		cout << "\nRecords in descending order of roll number are:" << endl;
+		Node* currentNode = START;
+		while (currentNode->next != NULL)
+			currentNode = currentNode->next;
+
+		while (currentNode != NULL) {
+			cout << currentNode->noMhs << " " << currentNode->name << endl;
+			currentNode = currentNode->prev;
 		}
 	}
 }
+
+
+	
